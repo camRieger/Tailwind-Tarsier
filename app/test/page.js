@@ -19,7 +19,6 @@ export default function Page({ inputAnswer = "", solution = [] }) {
           }
         });
       });
-        console.log(counter);
         if(counter > finalScore){
           finalScore = counter;
         }
