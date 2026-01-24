@@ -24,7 +24,7 @@ export default function Page(){
                 DESCRIPTION
               </div>
             </div>
-            <div className="flex flex-col h-screen w-1/2">
+            <div className="flex flex-col h-full w-1/2 justify-center">
               <CodeBlock code={problemCode}/>
             </div>
           </div>
