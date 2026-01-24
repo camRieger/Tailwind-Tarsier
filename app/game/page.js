@@ -5,15 +5,13 @@ import CodeBlock from "@/app/components/codeBlock";
 import ProblemDescription from "@/app/components/problemDescription";
 
 export default function Page(){
-  const problemTemplate = [
-    { type: "text", value: `<div className="text-black rounded-t-3xl">\n  <div className="` },
-    { type: "input", id: "className" },
-    { type: "text", value: `">\n    <h1> Test </h1>\n  </div>\n</div>` }
-  ];
 
-  const [userInput, setUserInput] = useState({});
-
-  const [compiledCode, setCompiledCode] = useState("");
+  const [problemCode, setProblemCode] = useState(
+    `<div class="bg-slate-900 text-center">
+    <h1>test</h1>
+</div>
+    `
+  );
 
   return(
     <div className="flex flex-col h-screen w-full absolute">
@@ -28,9 +26,7 @@ export default function Page(){
         </div>
         <div className="flex flex-col h-full w-1/2 justify-center">
           <CodeBlock
-            template={problemTemplate}
-            userInput={userInput}
-            setUserInput={setUserInput}
+            template={problemCode}
           />
         </div>
       </div>
