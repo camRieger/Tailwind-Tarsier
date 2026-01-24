@@ -1,14 +1,16 @@
 "use client"
 import { useState } from "react"
 import Header from "@/app/components/header";
+import CodeBlock from "@/app/components/codeBlock";
 
 export default function Page(){
-    const [problemCode, setProblemCode] = useState(`<div className="bg-slate-200 
-text-black rounded-t-3xl">
+    const [problemCode, setProblemCode] = useState(
+`<div className="bg-slate-200 text-black rounded-t-3xl">
     <div className="h-1/10">
-    <Header/>
+      <Header/>
     </div>
-</div>`);
+</div>`
+    );
     const [inputSolution, setInputSolution] = useState("");
 
     return(
@@ -20,13 +22,7 @@ text-black rounded-t-3xl">
               </div>
               DESCRIPTION
             </div>
-            <div className="bg-slate-500 overflow-x-auto flex flex-col justify-between rounded-md">
-              <div className="bg-slate-900 text-center">CODE</div>
-              <pre>
-{`${problemCode}`}
-              </pre>    
-              <input placeholder="Enter code here..." className="bg-white text-black placeholder-gray-500 pl-2" />
-            </div>
+            <CodeBlock code={problemCode}/>
           </div>
           <div className="grid grid-cols-2 bg-[#FFCF60] h-2/5">
             RENDER
