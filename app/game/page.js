@@ -109,14 +109,9 @@ export default function Page(){
           </div>
         </div>
 
-        <div className="grid grid-cols-2 bg-[#FFCF60] h-2/5">
-          <div className="w-2/3">
-            <CodeVisualizer
-              code={problemAnswer}
-            />
-          </div>
-          <div className="w-1/3">
-            {answerThreshold}%
+        <div className="flex justify-center bg-[#FFCF60] h-2/5">
+          <div className="m-4 w-2/5 bg-amber-100 rounded-2xl">
+
           </div>
         </div>
       </div>
