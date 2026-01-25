@@ -9,6 +9,7 @@ import Problem1 from "@/app/levels/problem1";
 import Problem2 from "../levels/problem2";
 import Problem3 from "../levels/problem3";
 import Problem1Description from "@/app/levelDescriptions/problem1Description";
+import Problem2Description from "@/app/levelDescriptions/problem2Description";
 
 export default function Page(){
 
