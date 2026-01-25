@@ -4,7 +4,7 @@ import Bug from "../../public/bedbug.svg"
 
 export default function Problem2({ answer="justify-center" }){
     return (
-        <div className="flex justify-center h-full w-full bg-indigo-950">
+        <div className="flex justify-center h-full w-full rounded-2xl bg-indigo-950">
             <div className={`flex flex-1 h-full w-full items-center ${answer}`}>
                 <Image 
                 src={Tarsier} 
