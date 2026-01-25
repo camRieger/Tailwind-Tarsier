@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react';
-import {getMaps} from './utils/get-maps';
+import {getMaps} from '@/app/utils/get-maps';
 
 export default function DisplayUsers() {
   const [maps, setMaps] = useState([]);
