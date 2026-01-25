@@ -6,6 +6,8 @@ import ProblemDescription from "@/app/components/problemDescription";
 import CodeVisualizer from "../components/codeVisualizer";
 import {getMaps} from '@/app/utils/get-maps';
 import Problem1 from "@/app/levels/problem1";
+import Problem2 from "../levels/problem2";
+import Problem3 from "../levels/problem3";
 import Problem1Description from "@/app/levelDescriptions/problem1Description";
 
 export default function Page(){
@@ -60,6 +62,7 @@ export default function Page(){
   function ProcessRender(){
     setProblemAnswer(problemCode.replace("{answer}", answer))
   }
+  console.log(selectedId);
 
   async function ResultAnalyzer(){
     let counter = 0;
@@ -113,7 +116,15 @@ export default function Page(){
 
         <div className="flex justify-center bg-[#FFCF60] h-2/5">
           <div className="m-4 w-2/5 bg-amber-100 rounded-2xl">
-            <Problem1 input={''}/>
+            {
+              selectedId === "Problem 1" ? (
+                <Problem1 input={answer} />
+              ) : selectedId === "Problem 2" ? (
+                <Problem2 answer={answer} />
+              ) : (
+                <Problem3 input={answer} />
+              )
+            }
           </div>
         </div>
       </div>
