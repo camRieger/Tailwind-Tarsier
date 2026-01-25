@@ -6,6 +6,7 @@ import ProblemDescription from "@/app/components/problemDescription";
 import CodeVisualizer from "../components/codeVisualizer";
 import {getMaps} from '@/app/utils/get-maps';
 import Problem1 from "@/app/levels/problem1";
+import Problem1Description from "@/app/levelDescriptions/problem1Description";
 
 export default function Page(){
 
@@ -97,8 +98,8 @@ export default function Page(){
             <div className="h-1/5">
               <Header title={'Tasty Bug'} optionSetter={setSelectedId} level={selectedId} levels={maps}/>
             </div>
-            <div className="h-4/5">
-              <ProblemDescription description={map.description} />
+            <div className="h-4/5 p-4">
+              <Problem1Description/>
             </div>
           </div>
           <div className="flex flex-col h-full w-1/2 justify-center">
