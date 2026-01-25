@@ -8,18 +8,7 @@ import {getMaps} from '@/app/utils/get-maps';
 
 export default function Page(){
 
-  const [problemCode, setProblemCode] = useState(
-`<div className="flex flex-col h-full w-1/2 text-black">
-  <div className="{answer}">
-    <Header title={'Tasty Bug'}/>
-    HEADERS
-  </div>
-  <div className="h-4/5">
-    <ProblemDescription description={'sample description'} />
-  </div>
-</div>`
-);
-
+  const [problemCode, setProblemCode] = useState("");
   const [maps, setMaps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -61,6 +50,7 @@ export default function Page(){
 
   useEffect(() => {
     if(map){
+      setProblemCode(map.template);
       setSolutions(map.solution);
     }
   }, [map]);

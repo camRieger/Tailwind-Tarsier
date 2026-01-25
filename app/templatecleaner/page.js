@@ -20,7 +20,39 @@ export default function DisplayUsers() {
       }
     }
     fetchMaps();
-  }, []); 
+  }, []);
+
+  function formatJSX(code) {
+    const lines = code.split("\n");
+    let indent = 0;
+    const indentSize = 2;
+
+    return lines
+      .map((line) => {
+        const trimmed = line.trim();
+
+        // Decrease indent for closing tags
+        if (trimmed.startsWith("</")) {
+          indent -= 1;
+        }
+
+        const formatted =
+          " ".repeat(indent * indentSize) + trimmed;
+
+        // Increase indent for opening tags (not self-closing)
+        if (
+          trimmed.startsWith("<") &&
+          !trimmed.startsWith("</") &&
+          !trimmed.endsWith("/>")
+        ) {
+          indent += 1;
+        }
+
+        return formatted;
+      })
+      .join("\n");
+    }
+
 
   if (loading) {
     return <p>Loading maps...</p>;
@@ -54,7 +86,10 @@ export default function DisplayUsers() {
           <strong>Solution:</strong> {map.solution}<br />
           <strong>Template:</strong>
           <pre className="whitespace-pre-wrap">
-            {map.template?.replace("space", "\n\n")}
+            {console.log(map.template)}
+            <pre className="whitespace-pre-wrap">
+              {formatJSX(map.template?.replace(/space/g, "\n"))}
+            </pre>
           </pre>
         </li>
       ))}

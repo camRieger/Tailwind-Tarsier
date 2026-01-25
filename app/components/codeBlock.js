@@ -1,6 +1,20 @@
-export default function CodeBlock({ template, setAnswer, confirm }) {
-  const codeParts = template.split("{answer}");
+import TemplateBlock from "../utils/templateHelper";
 
+export default function CodeBlock({ template, setAnswer, confirm }) {
+  let codeParts = null;
+  
+  if(template){
+    const formattedTemplate = TemplateBlock(template);
+    codeParts = formattedTemplate.split("{answer}");
+  }
+
+  if(!template || !codeParts){
+    return(
+      <div>
+        Loading Template...
+      </div>
+    )
+  }
   return (
     <div className="bg-slate-500 overflow-x-auto flex flex-col rounded-md h-full pb-5">
       <div className="bg-slate-900 text-center">
@@ -8,7 +22,7 @@ export default function CodeBlock({ template, setAnswer, confirm }) {
       </div>
 
       {/*display skeleton code here*/}
-      <div className="flex flex-col h-full justify-center">
+      <div className="flex flex-col h-full justify-center py-5 px-3">
         <pre>
           {codeParts[0]}
           <input
