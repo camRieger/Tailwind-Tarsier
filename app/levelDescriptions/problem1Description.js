@@ -5,7 +5,7 @@ export default function Problem1Description() {
         Welcome to Tailwind Tarsier! Your friend - the tarsier - is very hungry for a tasty bug. Let's see if we can learn Tailwind to help him get his dinner!
       </p>
       <p className='text-lg'>
-        Tarsiers are nocturnal - this means they like to hunt at night. Let's use Tailwind class names to wake the tarsier up, so we can help them up!
+        Tarsiers are nocturnal - this means they like to hunt at night. Let's use Tailwind class names to make things a bit darker so we can help wake them up!
       </p>
       <ul className='list-disc p-6'>
         <li className='text-lg'>
