@@ -107,7 +107,7 @@ export default function Page(){
               selectedId === "Problem 1" ? (
                 <Problem1Description/>
               ) : selectedId === "Problem 2" ? (
-                <Problem1Description/>
+                <Problem2Description/>
               ) : (
                 <Problem1Description/>
               )
@@ -130,9 +130,9 @@ export default function Page(){
                 <Problem1 input={answer} />
               ) : selectedId === "Problem 2" ? (
                 <Problem2 answer={answer} />
-              ) : (
+              ) : selectedId === "Problem 3" ?(
                 <Problem3 input={answer} />
-              )
+              ) : null
             }
           </div>
         </div>
