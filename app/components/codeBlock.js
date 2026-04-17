@@ -1,7 +1,14 @@
 import TemplateBlock from "../utils/templateHelper";
+import {useState} from "react";
 
 export default function CodeBlock({ template, setAnswer, confirm }) {
+  const [inputValue, setInputValue] = useState("")
   let codeParts = null;
+
+  function handleInputChange(e) {
+    setInputValue(e.target.value)
+    setAnswer(e.target.value)
+  }
   
   if(template){
     const formattedTemplate = TemplateBlock(template);
@@ -26,19 +33,20 @@ export default function CodeBlock({ template, setAnswer, confirm }) {
         <pre>
           {codeParts[0]}
           <input
-          placeholder="Enter answer here..."
-          className="bg-white text-black px-3 rounded-md"
-          onChange={(e) => setAnswer(e.target.value)}
+            value={inputValue}
+            placeholder="Enter answer here..."
+            className="bg-white text-black px-3 rounded-md"
+            onChange={handleInputChange}
           />
           {codeParts[1]}
         </pre>
       </div>
       <div className="flex flex-col h-full justify-end items-center">
         <button 
-        onClick={confirm}
-        className="bg-[#417D06] p-2 rounded-lg w-1/5 text-lg"
+          onClick={confirm}
+          className="bg-[#417D06] active:bg-[#2f5a04] p-2 rounded-lg w-1/5 text-lg cursor-pointer"
         >
-          Confirm
+          Submit
         </button>
       </div>
     </div>

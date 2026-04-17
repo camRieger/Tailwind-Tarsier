@@ -1,8 +1,8 @@
-import tarsier from "../../public/tarsier.png"
-import bug from "../../public/bedbug.svg"
-import box from "../../public/Icon_box_hat_brown.png"
+import tarsier from "../../../public/tarsier.png"
+import bug from "../../../public/bedbug.svg"
+import box from "../../../public/Icon_box_hat_brown.png"
 import Image from "next/image";
-export default function Problem3({ input }) {
+export default function Page({ input }) {
   return (
     <main className="flex justify-center h-full w-full">
       
