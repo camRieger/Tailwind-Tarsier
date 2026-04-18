@@ -3,6 +3,7 @@
 /* import tailwind classes to always be included in the bundle */
 /* they will always be available for dynamic tag rendering */
 /* add any required classes for new levels here */
+/* comprehensive lists of classes provided by claude.ai */
 @source inline("justify-{start,center,end,between,around,evenly}");
 
 @source inline("bg-red-{50,100,200,300,400,500,600,700,800,900,950}");
@@ -23,6 +24,24 @@
 @source inline("bg-violet-{50,100,200,300,400,500,600,700,800,900,950}");
 @source inline("bg-fuchsia-{50,100,200,300,400,500,600,700,800,900,950}");
 @source inline("bg-rose-{50,100,200,300,400,500,600,700,800,900,950}");
+@source inline("transition-{colors,all} duration-{150,300,500}");
+
+@source inline("bottom-{1/4,1/3,1/2,2/3,3/4,1/5,2/5,3/5,4/5,1/6,5/6}");
+@source inline("right-{1/4,1/3,1/2,2/3,3/4,1/5,2/5,3/5,4/5,1/6,5/6}");
+@source inline("left-{1/4,1/3,1/2,2/3,3/4,1/5,2/5,3/5,4/5,1/6,5/6}");
+@source inline("top-{1/4,1/3,1/2,2/3,3/4,1/5,2/5,3/5,4/5,1/6,5/6}");
+
+@source inline("bottom-[5%] bottom-[10%] bottom-[15%] bottom-[20%] bottom-[25%] bottom-[30%] bottom-[35%] bottom-[40%] bottom-[45%] bottom-[50%] bottom-[55%] bottom-[60%] bottom-[65%] bottom-[70%] bottom-[75%] bottom-[80%] bottom-[85%] bottom-[90%] bottom-[95%]");
+@source inline("right-[5%] right-[10%] right-[15%] right-[20%] right-[25%] right-[30%] right-[35%] right-[40%] right-[45%] right-[50%] right-[55%] right-[60%] right-[65%] right-[70%] right-[75%] right-[80%] right-[85%] right-[90%] right-[95%]");
+@source inline("left-[5%] left-[10%] left-[15%] left-[20%] left-[25%] left-[30%] left-[35%] left-[40%] left-[45%] left-[50%] left-[55%] left-[60%] left-[65%] left-[70%] left-[75%] left-[80%] left-[85%] left-[90%] left-[95%]");
+@source inline("top-[5%] top-[10%] top-[15%] top-[20%] top-[25%] top-[30%] top-[35%] top-[40%] top-[45%] top-[50%] top-[55%] top-[60%] top-[65%] top-[70%] top-[75%] top-[80%] top-[85%] top-[90%] top-[95%]");
+
+@source inline("w-[5%] w-[10%] w-[15%] w-[20%] w-[25%] w-[30%] w-[35%] w-[40%] w-[45%] w-[50%] w-[55%] w-[60%] w-[65%] w-[70%] w-[75%] w-[80%] w-[85%] w-[90%] w-[95%]");
+@source inline("h-[5%] h-[10%] h-[15%] h-[20%] h-[25%] h-[30%] h-[35%] h-[40%] h-[45%] h-[50%] h-[55%] h-[60%] h-[65%] h-[70%] h-[75%] h-[80%] h-[85%] h-[90%] h-[95%]");
+
+@source inline("w-{0,1,2,3,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+
+@source inline("text-{xs,sm,base,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl,8xl,9xl}");
 
 :root {
   --background: #ffffff;

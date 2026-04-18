@@ -78,7 +78,7 @@ export default function LandingPage() {
       <div className="bg-[#B87A00] py-12 px-10">
         <h2 className="text-2xl font-bold text-indigo-950 mb-6 text-center">Levels</h2>
         <div className="flex justify-center gap-6">
-          {["level1", "level2", "level3"].map((id, i) => (
+          {["level1", "level2", "level3", "level4", "level5"].map((id, i) => (
             <button
               key={id}
               onClick={() => router.push(`/levels/${id}`)}

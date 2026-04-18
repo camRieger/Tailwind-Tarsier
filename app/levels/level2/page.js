@@ -4,17 +4,18 @@ import Problem2Description from "@/app/levels/levelDescriptions/problem2Descript
 
 const mapData = {
   template:
-`<div>
-  <div className={\`{answer}\`}>
-    // The Tarsier!
-  </div>
-  <div>
-    // His Tasty Bug!
-  </div>
-</div>`,
+    `<div>
+    <div className={\`{answer}\`}>
+      // The Tarsier!
+    </div>
+    <div>
+      // His Tasty Bug!
+    </div>
+    </div>`,
   solutions: ["justify-end"]
 };
 
+// can't animate justify-end :(
 function getVisualizerConfig(answer) {
   const safeAnswer = answer.startsWith("justify-") ? answer : ""
   return {

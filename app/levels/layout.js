@@ -10,6 +10,8 @@ const levels = [
   { id: "level1", label: "Problem 1" },
   { id: "level2", label: "Problem 2" },
   { id: "level3", label: "Problem 3" },
+  { id: "level4", label: "Problem 4" },
+  { id: "level5", label: "Problem 5" },
 ];
 
 export default function LevelsLayout({ children }) {
