@@ -1,20 +1,23 @@
 // levels/layout.js
-"use client"
-import { usePathname, useRouter } from "next/navigation"
-import Header from "@/app/components/header"
-import { LevelProvider } from "./context"
-import CodeVisualizer from "@/app/components/codeVisualizer"
+"use client";
+import { usePathname, useRouter } from "next/navigation";
+import Header from "@/app/components/header";
+import { LevelProvider } from "./context";
+import CodeVisualizer from "@/app/components/codeVisualizer";
+import {useAuth} from "@/app/contexts/AuthContext";
 
 const levels = [
   { id: "level1", label: "Problem 1" },
   { id: "level2", label: "Problem 2" },
   { id: "level3", label: "Problem 3" },
-]
+];
 
 export default function LevelsLayout({ children }) {
-  const pathname = usePathname()
-  const router = useRouter()
-  const selectedId = pathname.split("/").pop()
+  const { completedLevels } = useAuth();
+
+  const pathname = usePathname();
+  const router = useRouter();
+  const selectedId = pathname.split("/").pop();
 
   return (
     <LevelProvider>
@@ -27,6 +30,7 @@ export default function LevelsLayout({ children }) {
                 level={selectedId}
                 levels={levels}
                 optionSetter={(id) => router.push(`/levels/${id}`)}
+                completedLevels={completedLevels}
               />
             </div>
             <div className="h-4/5 p-4">
@@ -42,5 +46,5 @@ export default function LevelsLayout({ children }) {
         </div>
       </div>
     </LevelProvider>
-  )
+  );
 }

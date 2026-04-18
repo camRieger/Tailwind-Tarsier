@@ -1,9 +1,8 @@
-'use client'
+'use client';
 
-export default function NavBlock({ currentLevel, levels, optionSetter }) {
-
+export default function NavBlock({ currentLevel, levels, optionSetter, completedLevels = [] }) {
   return (
-    <div className="flex-2 flex items-center justify-center ">
+    <div className="flex-2 flex items-center justify-center">
       <select
         value={currentLevel}
         onChange={(e) => optionSetter(e.target.value)}
@@ -11,7 +10,7 @@ export default function NavBlock({ currentLevel, levels, optionSetter }) {
       >
         {levels.map((level) => (
           <option key={level.id} value={level.id}>
-            {level.id}
+            {level.label} {completedLevels.includes(level.id) ? "✓ " : ""}
           </option>
         ))}
       </select>

@@ -1,4 +1,5 @@
-import TemplateBlock from "../utils/templateHelper";
+// existing code by Kyle Carlos
+import TemplateBlock from "../utils/template-helper";
 import {useState} from "react";
 
 export default function CodeBlock({ template, setAnswer, confirm }) {
@@ -23,8 +24,8 @@ export default function CodeBlock({ template, setAnswer, confirm }) {
     )
   }
   return (
-    <div className="bg-slate-500 overflow-x-auto flex flex-col rounded-md h-full pb-5">
-      <div className="bg-slate-900 text-center">
+    <div className="bg-slate-500 flex flex-col rounded-md h-full pb-5 mb-4">
+      <div className="bg-slate-900 text-center rounded-t-md">
         CODE
       </div>
 

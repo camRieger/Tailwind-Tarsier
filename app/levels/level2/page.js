@@ -1,19 +1,36 @@
-import Image from "next/image";
-import Tarsier from "../../../public/tarsier.png";
-import Bug from "../../../public/bedbug.svg"
+"use client";
+import Level from "@/app/levels/components/level";
+import Problem2Description from "@/app/levels/levelDescriptions/problem2Description";
 
-export default function Page({ answer="justify-center" }){
-    return (
-        <div className="flex justify-center h-full w-full rounded-2xl bg-indigo-950">
-            <div className={`flex flex-1 h-full w-full items-center ${answer}`}>
-                <Image 
-                src={Tarsier} 
-                alt='tarsier' 
-                height={150}/>
-            </div>
-            <div className="flex flex-1 h-full w-full items-center justify-start">
-                <Image src={Bug} alt='bug' height={70}/>
-            </div>
-        </div>
-    )
+const mapData = {
+  template:
+`<div>
+  <div className={\`{answer}\`}>
+    // The Tarsier!
+  </div>
+  <div>
+    // His Tasty Bug!
+  </div>
+</div>`,
+  solutions: ["justify-end"]
+};
+
+function getVisualizerConfig(answer) {
+  const safeAnswer = answer.startsWith("justify-") ? answer : ""
+  return {
+    containerClass: `justify-center bg-indigo-950`,
+    tarsierClass: `items-center ml-4 ${safeAnswer}`,
+    bugClass: "items-center justify-start"
+  };
+}
+
+export default function Level2Page() {
+  return (
+    <Level
+      levelId="level2"
+      mapData={mapData}
+      getVisualizerConfig={getVisualizerConfig}
+      description={<Problem2Description />}
+    />
+  );
 }

@@ -10,7 +10,7 @@ import { useState } from "react"
 
 export default function LandingPage() {
   const router = useRouter()
-  const { user } = useAuth()
+  const { user, completedLevels, loading } = useAuth()
   const [error, setError] = useState(null)
 
   async function handleSignIn() {
@@ -31,7 +31,7 @@ export default function LandingPage() {
           <Image src={Bug} alt="bug" height={60} />
         </div>
         <p className="text-xl text-amber-200 max-w-lg">
-          Help the Tarsier catch his dinner by writing the correct Tailwind CSS to position him just right.
+          Help the Tarsier catch his dinner using Tailwind CSS!
         </p>
       </div>
 
@@ -82,9 +82,18 @@ export default function LandingPage() {
             <button
               key={id}
               onClick={() => router.push(`/levels/${id}`)}
-              className="bg-[#FFCF60] text-indigo-950 font-bold px-8 py-6 rounded-xl text-xl hover:bg-indigo-950 hover:text-[#FFCF60] transition-colors"
+              className={`w-40 bg-[#FFCF60] text-indigo-950 font-bold px-10 py-8 rounded-xl text-xl hover:bg-indigo-950 hover:text-[#FFCF60] transition-colors
+              ${loading ? "animate-pulse" : ""}
+              ${!loading && completedLevels.includes(id) ? "outline outline-8 outline-green-400" : ""}`}
             >
-              Level {i + 1}
+              <div className="flex flex-col items-center gap-1 h-8 justify-center">
+                <span>Level {i + 1}</span>
+                {loading && (
+                  <span className="text-[10px] font-normal text-indigo-400">Loading Data...</span>
+                )}
+                {!loading && completedLevels.includes(id) && (""
+                )}
+              </div>
             </button>
           ))}
         </div>
