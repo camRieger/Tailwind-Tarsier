@@ -30,7 +30,8 @@ export default function Banner() {
             )}
             <button
               onClick={logout}
-              className="border border-amber-400 text-amber-400 px-4 py-1 rounded-lg text-sm hover:bg-amber-400 hover:text-indigo-950 transition-colors"
+              className="border border-amber-400 text-amber-400 px-4 py-1 rounded-lg text-sm hover:bg-amber-400
+               hover:text-indigo-950 transition-colors cursor-pointer"
             >
               Sign Out
             </button>
@@ -40,7 +41,8 @@ export default function Banner() {
             <span className="text-amber-200 text-sm">Not signed in</span>
             <button
               onClick={() => router.push("/")}
-              className="border border-amber-400 text-amber-400 px-4 py-1 rounded-lg text-sm hover:bg-amber-400 hover:text-indigo-950 transition-colors"
+              className="border border-amber-400 text-amber-400 px-4 py-1 rounded-lg text-sm hover:bg-amber-400
+              hover:text-indigo-950 transition-colors cursor-pointer"
             >
               Go To Sign In
             </button>

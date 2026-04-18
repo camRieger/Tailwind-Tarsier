@@ -24,7 +24,6 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-full bg-indigo-950 text-white">
 
-      {/* Hero */}
       <div className="flex flex-col items-center justify-center flex-1 gap-4 px-6 pt-12 pb-8 text-center">
         <div className="flex items-center gap-3 lg:gap-6">
           <Image src={Tarsier} alt="tarsier" height={120} className="h-16 lg:h-[120px] w-auto" />
@@ -36,7 +35,6 @@ export default function LandingPage() {
         </p>
       </div>
 
-      {/* CTA */}
       <div className="flex flex-col items-center gap-4 pb-12">
         <button
           onClick={() => router.push("/levels/level1")}
@@ -44,7 +42,8 @@ export default function LandingPage() {
             transition-all duration-300 ease-out transform-gpu shadow-md
             hover:shadow-2xl hover:-translate-y-2 hover:scale-110
             hover:bg-[#B87A00] hover:text-white
-            active:scale-95 active:translate-y-0 active:shadow-md"
+            active:scale-95 active:translate-y-0 active:shadow-md
+            cursor-pointer"
         >
           Play Now
         </button>
@@ -57,7 +56,9 @@ export default function LandingPage() {
           ) : (
             <button
               onClick={handleSignIn}
-              className="border border-amber-400 text-amber-400 px-6 py-2 rounded-lg hover:bg-amber-400 hover:text-indigo-950 transition-colors ease-in-out"
+              className="border
+              border-amber-400 text-amber-400 px-6 py-2 rounded-lg hover:bg-amber-400 hover:text-indigo-950
+              transition-colors ease-in-out cursor-pointer"
             >
               Sign In with Google
             </button>
@@ -66,7 +67,6 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* Level Select */}
       <div className="bg-[#B87A00] py-8 lg:py-12 px-6 lg:px-10">
         <h2 className="text-2xl font-bold text-indigo-950 mb-6 text-center">Levels</h2>
         <div className="flex flex-wrap justify-center gap-4">
@@ -74,7 +74,9 @@ export default function LandingPage() {
             <button
               key={id}
               onClick={() => router.push(`/levels/${id}`)}
-              className={`w-32 lg:w-40 bg-[#FFCF60] text-indigo-950 font-bold px-6 lg:px-10 py-6 lg:py-8 rounded-xl text-lg lg:text-xl hover:bg-indigo-950 hover:text-[#FFCF60] transition-colors
+              className={`w-32 lg:w-40 bg-[#FFCF60] text-indigo-950 font-bold px-6 lg:px-10 py-6 lg:py-8 
+              rounded-xl text-lg lg:text-xl hover:bg-indigo-950 hover:text-[#FFCF60] transition-colors
+              cursor-pointer
                 ${loading ? "animate-pulse" : ""}
                 ${!loading && completedLevels.includes(id) ? "outline outline-8 outline-green-400" : ""}`}
             >
