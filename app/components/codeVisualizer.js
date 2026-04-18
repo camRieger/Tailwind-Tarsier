@@ -12,7 +12,7 @@ export default function CodeVisualizer() {
   return (
     <div className={`relative flex h-full w-full rounded-2xl ${containerClass}`}>
       <div className={`flex flex-1 h-full w-full ${tarsierClass}`}>
-        <Image src={Tarsier} alt="tarsier" height={150} />
+        <Image src={Tarsier} alt="tarsier" height={150} className="h-16 lg:h-[150px] w-auto" />
       </div>
       {extras.map((extra, i) => (
         <div key={i} className={extra.class}>
@@ -20,7 +20,7 @@ export default function CodeVisualizer() {
         </div>
       ))}
       <div className={`flex flex-1 h-full w-full ${bugClass}`}>
-        <Image src={Bug} alt="bug" height={70} />
+        <Image src={Bug} alt="bug" height={70} className="h-8 lg:h-[70px] w-auto" />
       </div>
     </div>
   )

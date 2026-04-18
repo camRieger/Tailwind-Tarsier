@@ -1,4 +1,3 @@
-// app/page.js
 "use client"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
@@ -23,35 +22,29 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="flex flex-col h-screen bg-indigo-950 text-white overflow-hidden">
-      <div className="flex flex-col items-center justify-center flex-1 gap-6 px-10 pt-24 pb-12 text-center">
-        <div className="flex items-center gap-6">
-          <Image src={Tarsier} alt="tarsier" height={120} />
-          <h1 className="text-6xl font-bold text-[#FFCF60]">Tailwind Tarsier</h1>
-          <Image src={Bug} alt="bug" height={60} />
+    <div className="flex flex-col min-h-full bg-indigo-950 text-white">
+
+      {/* Hero */}
+      <div className="flex flex-col items-center justify-center flex-1 gap-4 px-6 pt-12 pb-8 text-center">
+        <div className="flex items-center gap-3 lg:gap-6">
+          <Image src={Tarsier} alt="tarsier" height={120} className="h-16 lg:h-[120px] w-auto" />
+          <h1 className="text-3xl lg:text-6xl font-bold text-[#FFCF60]">Tailwind Tarsier</h1>
+          <Image src={Bug} alt="bug" height={60} className="h-8 lg:h-[60px] w-auto" />
         </div>
-        <p className="text-xl text-amber-200 max-w-lg">
+        <p className="text-base lg:text-xl text-amber-200 max-w-lg">
           Help the Tarsier catch his dinner using Tailwind CSS!
         </p>
       </div>
 
-      <div className="flex flex-col items-center gap-4 pb-24">
+      {/* CTA */}
+      <div className="flex flex-col items-center gap-4 pb-12">
         <button
           onClick={() => router.push("/levels/level1")}
-          className="
-            bg-[#FFCF60] text-indigo-950 font-bold text-lg px-10 py-3 rounded-xl
-
-            transition-all duration-300 ease-out
-            transform-gpu
-
-            shadow-md
-            hover:shadow-2xl
-
-            hover:-translate-y-2 hover:scale-110
+          className="bg-[#FFCF60] text-indigo-950 font-bold text-lg px-10 py-3 rounded-xl
+            transition-all duration-300 ease-out transform-gpu shadow-md
+            hover:shadow-2xl hover:-translate-y-2 hover:scale-110
             hover:bg-[#B87A00] hover:text-white
-
-            active:scale-95 active:translate-y-0 active:shadow-md
-          "
+            active:scale-95 active:translate-y-0 active:shadow-md"
         >
           Play Now
         </button>
@@ -69,29 +62,26 @@ export default function LandingPage() {
               Sign In with Google
             </button>
           )}
-          {error && (
-            <p className="text-red-400 text-sm">{error}</p>
-          )}
+          {error && <p className="text-red-400 text-sm">{error}</p>}
         </div>
       </div>
 
-      <div className="bg-[#B87A00] py-12 px-10">
+      {/* Level Select */}
+      <div className="bg-[#B87A00] py-8 lg:py-12 px-6 lg:px-10">
         <h2 className="text-2xl font-bold text-indigo-950 mb-6 text-center">Levels</h2>
-        <div className="flex justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-4">
           {["level1", "level2", "level3", "level4", "level5"].map((id, i) => (
             <button
               key={id}
               onClick={() => router.push(`/levels/${id}`)}
-              className={`w-40 bg-[#FFCF60] text-indigo-950 font-bold px-10 py-8 rounded-xl text-xl hover:bg-indigo-950 hover:text-[#FFCF60] transition-colors
-              ${loading ? "animate-pulse" : ""}
-              ${!loading && completedLevels.includes(id) ? "outline outline-8 outline-green-400" : ""}`}
+              className={`w-32 lg:w-40 bg-[#FFCF60] text-indigo-950 font-bold px-6 lg:px-10 py-6 lg:py-8 rounded-xl text-lg lg:text-xl hover:bg-indigo-950 hover:text-[#FFCF60] transition-colors
+                ${loading ? "animate-pulse" : ""}
+                ${!loading && completedLevels.includes(id) ? "outline outline-8 outline-green-400" : ""}`}
             >
               <div className="flex flex-col items-center gap-1 h-8 justify-center">
                 <span>Level {i + 1}</span>
                 {loading && (
                   <span className="text-[10px] font-normal text-indigo-400">Loading Data...</span>
-                )}
-                {!loading && completedLevels.includes(id) && (""
                 )}
               </div>
             </button>

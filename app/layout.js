@@ -22,10 +22,12 @@ export default function RootLayout({ children }) {
   return (
 
       <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen overflow-hidden`}>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen`}>
           <AuthContextProvider>
             <Banner/>
-            {children}
+            <main className="flex-1 overflow-y-auto">
+              {children}
+            </main>
           </AuthContextProvider>
         </body>
        </html>

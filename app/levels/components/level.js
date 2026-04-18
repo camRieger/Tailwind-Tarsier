@@ -68,11 +68,11 @@ export default function Level({ levelId, mapData, getVisualizerConfig, descripti
   }
 
   return (
-    <div className="flex flex-row h-full gap-20">
-      <div className="w-1/2 flex flex-col gap-2">
+    <div className="flex flex-col lg:flex-row h-full gap-4 lg:gap-20 overflow-y-auto">
+      <div className="w-full lg:w-1/2 flex flex-col gap-2">
         {description}
       </div>
-      <div className="relative w-1/2 h-full">
+      <div className="relative w-full lg:w-1/2 h-64 lg:h-full">
         <CodeBlock
           template={mapData.template}
           answerCount={answerCount}
@@ -82,5 +82,5 @@ export default function Level({ levelId, mapData, getVisualizerConfig, descripti
         <ResultModal result={modal} onClose={() => setModal(null)} />
       </div>
     </div>
-  )
+    )
 }

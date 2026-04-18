@@ -23,8 +23,8 @@ export default function LevelsLayout({ children }) {
 
   return (
     <LevelProvider>
-      <div className="flex flex-col h-full w-full">
-        <div className="flex flex-row gap-20 bg-[#B87A00] h-3/5 pt-10 px-10 pb-10">
+      <div className="flex flex-col h-full w-full overflow-y-auto">
+        <div className="flex flex-row gap-20 bg-[#B87A00] min-h-[60%] pt-10 px-10 pb-10">
           <div className="flex flex-col h-full w-full">
             <div className="h-1/5">
               <Header
@@ -41,12 +41,12 @@ export default function LevelsLayout({ children }) {
           </div>
         </div>
 
-        <div className="flex justify-center bg-[#FFCF60] h-2/5">
-          <div className="m-4 w-2/5 bg-amber-100 rounded-2xl">
+        <div className="flex justify-center bg-[#FFCF60] min-h-[40%]">
+          <div className="m-4 w-full lg:w-2/5 bg-amber-100 rounded-2xl">
             <CodeVisualizer />
           </div>
         </div>
       </div>
     </LevelProvider>
-  );
+  )
 }
